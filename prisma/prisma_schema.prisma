@@ -24,3 +24,18 @@ enum gen{
   Comedy
 }
 
+model User {
+  id          String   @id @default(uuid())
+  username    String
+  password    String
+  email       String   @unique
+  role        Role     @default(USER)
+  joiningYear DateTime @default(now())
+  age         Int
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
